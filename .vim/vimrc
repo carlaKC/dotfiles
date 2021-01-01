@@ -8,3 +8,10 @@ set backspace=indent,eol,start
 " Line numbers
 set number
 set colorcolumn=72
+
+" Go-vim
+" Run go imports along with go fmt on each save
+let g:go_fmt_command = "goimports"
+
+" Get type info by default when we hover over things
+let g:go_auto_type_info = 1          
