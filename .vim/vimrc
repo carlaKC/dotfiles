@@ -1,1 +1,10 @@
+" Plugins etc
+filetype plugin indent on
+syntax on
+
+" Regular backspace
+set backspace=indent,eol,start
+
+" Line numbers
+set number
 set colorcolumn=72
