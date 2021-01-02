@@ -14,4 +14,8 @@ set colorcolumn=72
 let g:go_fmt_command = "goimports"
 
 " Get type info by default when we hover over things
-let g:go_auto_type_info = 1          
+let g:go_auto_type_info = 1
+
+" NerdTree remap to ctrl+g
+:nnoremap <C-g> :NERDTreeToggle<CR>
+
