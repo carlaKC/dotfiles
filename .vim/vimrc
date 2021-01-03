@@ -19,3 +19,15 @@ let g:go_auto_type_info = 1
 " NerdTree remap to ctrl+g
 :nnoremap <C-g> :NERDTreeToggle<CR>
 
+" Useful remaps
+" Move esc to home row
+inoremap jk <ESC>
+
+" Shortcuts more reachable
+let mapleader = "'"
+
+" Highlight all results	
+set hlsearch
+
+" Show search results while typing
+set incsearch
