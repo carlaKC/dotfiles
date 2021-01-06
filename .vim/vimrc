@@ -34,3 +34,10 @@ set incsearch
 
 " Share system keyboard
 set clipboard=unnamed
+
+" Spelling
+set spell
+set spell spelllang=en_us
+set spellfile=~/.vim/spellfile.add
+highlight clear SpellBad
+highlight SpellBad term=reverse ctermfg=9 cterm=undercurl guisp=none
