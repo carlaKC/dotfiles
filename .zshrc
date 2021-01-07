@@ -92,8 +92,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Migrated from old bash profile
 # Global environment variables
-# Local level envs should *not* be set here, rather create vars.sh in relevant dir!
 export GOPATH="/Users/carla/go"
 export GOMODULES="on"
 
@@ -103,10 +103,6 @@ export PATH=$PATH:/Users/carla/go/bin
 # Add protoc to path
 export PATH=$PATH:/Users/carla/tools/protoc/bin
 
-# Git tab completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# Migrated from old bash profile
 PS2=" 🔪 "
 
 # Useful git scripts (from Joost)
@@ -140,12 +136,6 @@ fpr(){
   git fetch origin pull/$1/head:review-$1-$2
   git checkout review-$1-$2
 }
-
-# Git one liner logs
-alias gl="git log --oneline --decorate"
-
-# Git: Alias signed commits
-alias cmt="git commit -S "
 
 # Git: rebase on master with date workartound
 alias rbm="git rebase --ignore-date master"
