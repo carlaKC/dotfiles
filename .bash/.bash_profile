@@ -21,14 +21,6 @@ PS1="\w \$(parse_git_branch) "
 
 PS2=" 🔪 "
 
-# Run a LND node manually
-unalias mlnd
-
-mkl() {
-  make tags="autopilotrpc signrpc walletrpc chainrpc invoicesrpc routerrpc watchtowerrpc "
-}
-
-
 # Useful git scripts (from Joost)
 cas () { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --autostash -i $1^ --autosquash; }
 
@@ -83,35 +75,5 @@ fi
 export python="python3"
 export pip="pip3"
 
-# Edit this file 
-alias vip="vi ~/.bash_profile"
-
 # Shorthand unit testing
 u () { make unit pkg=$1; }
-
-# Run faraday connected to alice in regtest 
-alias frd="/Users/carla/go/src/github.com/lightninglabs/faraday/faraday --lnd.tlscertpath=/Users/carla/dev/network/mounts/regtest/alice/tls.cert --network=regtest --lnd.macaroondir=/Users/carla/dev/network/mounts/regtest/alice --lnd.rpcserver=localhost:10011"
-
-# Run Nautilus
-alias naut='nautserver --network=regtest \
-  --insecure \
-  --bitcoin.host=localhost:18443 \
-  --bitcoin.user=kek \
-  --bitcoin.password=kek\
-  --bitcoin.httppostmode \
-  --lnd.host=localhost:10013 \
-  --lnd.macaroondir=/Users/carla/dev/network/mounts/regtest/charlie/ \
-  --lnd.tlspath=/Users/carla/dev/network/mounts/regtest/charlie/tls.cert \
-  --debuglevel=debug \
-  --prometheus.active \
-  daemon'
-
-# Run loop connecting to the nautilus above
-alias lp='loopd --network=regtest \
-  --debuglevel=debug \
-  --corsorigin=* \
-  --server.host=localhost:11009 \
-  --server.notls \
-  --lnd.host=localhost:10011 \
-  --lnd.macaroondir=/Users/carla/dev/network/mounts/regtest/alice/ \
-  --lnd.tlspath=/Users/carla/dev/network/mounts/regtest/alice/tls.cert '
