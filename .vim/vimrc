@@ -1,3 +1,6 @@
+" Mapleader
+let mapleader = "\<Space>"
+
 " Plugins etc
 filetype plugin indent on
 syntax on
@@ -20,6 +23,19 @@ let g:go_fmt_command = "goimports"
 
 " Get type info by default when we hover over things
 let g:go_auto_type_info = 1
+
+" Convenient save on make
+set autowrite
+
+" GoVim shortcuts
+" Quicklist nav
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" Tests
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
 
 " NerdTree remap to ctrl+g
 :nnoremap <C-g> :NERDTreeToggle<CR>
@@ -46,3 +62,15 @@ set spell spelllang=en_us
 set spellfile=~/.vim/spellfile.add
 highlight clear SpellBad
 highlight SpellBad term=reverse ctermfg=9 cterm=undercurl guisp=none
+
+" GoBuild or GoCompile based on whether we are in a test file or not
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
