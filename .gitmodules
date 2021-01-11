@@ -13,3 +13,6 @@
 [submodule ".vim/pack/colors/start/rainglow"]
 	path = .vim/pack/colors/start/rainglow
 	url = https://github.com/rainglow/vim.git
+[submodule ".vim/pack/plugins/start/fzf"]
+	path = .vim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf.git
