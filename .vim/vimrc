@@ -12,10 +12,18 @@ set backspace=indent,eol,start
 set number
 set colorcolumn=72
 
+" Theme and prettyness
 set t_Co=256
 syntax enable
 set background=dark
 colorscheme peacock
+
+" Highlighting for go syntax
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
 
 " Go-vim
 " Run go imports along with go fmt on each save
@@ -27,6 +35,9 @@ let g:go_auto_type_info = 1
 " Convenient save on make
 set autowrite
 
+" Lint on write
+let g:go_metalinter_autosave = 1
+
 " GoVim shortcuts
 " Quicklist nav
 map <C-n> :cnext<CR>
@@ -36,6 +47,12 @@ nnoremap <leader>a :cclose<CR>
 " Tests
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
+
+" Opening tests in different splits
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " NerdTree remap to ctrl+g
 :nnoremap <C-g> :NERDTreeToggle<CR>
