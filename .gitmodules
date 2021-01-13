@@ -19,3 +19,6 @@
 [submodule ".vim/pack/plugins/start/splitjoin"]
 	path = .vim/pack/plugins/start/splitjoin
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule ".vim/pack/colors/start/solarizedsch"]
+	path = .vim/pack/colors/start/solarizedsch
+	url = https://github.com/altercation/vim-colors-solarized
