@@ -8,6 +8,9 @@ syntax on
 " Regular backspace
 set backspace=indent,eol,start
 
+" No swap files, annoying for dev
+set noswapfile
+
 " Line numbers
 set number
 set colorcolumn=72
