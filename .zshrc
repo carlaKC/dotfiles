@@ -194,3 +194,12 @@ function vi_mode_prompt_info() {
 # define right prompt, regardless of whether the theme defined it
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
+
+# status prompt for git
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
