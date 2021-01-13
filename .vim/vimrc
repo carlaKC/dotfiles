@@ -11,6 +11,9 @@ set backspace=indent,eol,start
 " No swap files, annoying for dev
 set noswapfile
 
+" Read changes from filesys
+set autoread
+
 " Line numbers
 set number
 set colorcolumn=72
@@ -40,7 +43,8 @@ let g:go_auto_type_info = 1
 set autowrite
 
 " Lint on write
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = []
+let g:go_metalinter_enabled = []
 
 " GoVim shortcuts
 " Quicklist nav
