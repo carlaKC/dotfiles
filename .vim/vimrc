@@ -47,6 +47,10 @@ let g:go_fmt_command = "goimports"
 " Get type info by default when we hover over things
 let g:go_auto_type_info = 1
 
+" Display info on demand + speed up update time
+let g:go_auto_type_info = 1
+set updatetime=100
+
 " Convenient save on make
 set autowrite
 
