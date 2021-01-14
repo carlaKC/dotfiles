@@ -16,7 +16,7 @@ set autoread
 
 " Line numbers
 set number
-set colorcolumn=72
+set colorcolumn=80
 
 " Theme and prettyness
 set t_Co=256
@@ -31,6 +31,14 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
+
+" Airline list buffers
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename and buffer nr
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Go-vim
 " Run go imports along with go fmt on each save
