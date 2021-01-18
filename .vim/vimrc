@@ -81,9 +81,6 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 " Move esc to home row
 inoremap jk <ESC>
 
-" Shortcuts more reachable
-let mapleader = "'"
-
 " Highlight all results	
 set hlsearch
 
