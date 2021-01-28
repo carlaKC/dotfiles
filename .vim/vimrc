@@ -75,7 +75,8 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " Popup code completion for go
-au filetype go inoremap <buffer> . .<C-x><C-o>
+au filetype go inoremap <buffer> <C-e> .<C-x><C-o>
+autocmd CompleteDone * pclose
 
 " NerdTree remap to ctrl+g
 :nnoremap <C-g> :NERDTreeToggle<CR>
