@@ -91,6 +91,12 @@ set hlsearch
 " Show search results while typing
 set incsearch
 
+" Case insensitive search 
+:set ignorecase
+
+" If there are capitals in a search, it will be case sensitive.
+:set smartcase
+
 " Share system keyboard
 set clipboard=unnamed
 
