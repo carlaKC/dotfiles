@@ -46,7 +46,8 @@ root: ~/notes
 
 windows:
   - editor:
-      layout: 1a4e,320x82,0,0{190x82,0,0,0,129x82,191,0,2}
+      layout: 87b9,320x82,0,0{190x82,0,0[190x41,0,0,8,190x40,0,42,14],129x82,191,0,9}
       panes:
         - ls
+        - /Users/carla/go/src/github.com/carlaKC/dotfiles
         - cd 2021
