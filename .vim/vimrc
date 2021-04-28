@@ -11,6 +11,10 @@ set backspace=indent,eol,start
 " No swap files, annoying for dev
 set noswapfile
 
+" Allow undos after write 
+set undofile 
+set undodir=~/.vim/undo
+
 " Read changes from filesys
 set autoread
 
