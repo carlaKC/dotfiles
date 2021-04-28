@@ -1,7 +1,7 @@
-# /Users/carla/.config/tmuxinator/test.yml
+# /Users/carla/.config/tmuxinator/lndmon.yml
 
-name: loop
-root: ~/go/src/github.com/lightninglabs/nautilus/
+name: lndmon
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -46,12 +46,12 @@ root: ~/go/src/github.com/lightninglabs/nautilus/
 
 windows:
   - editor:
-      layout: tiled
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
       panes:
-        - ls
-  - loop:
-      layout: 23ab,320x82,0,0{160x82,0,0,3,159x82,161,0[159x41,161,0,4,159x40,161,42,5]}
-      panes:
-        - cd ~/go/src/github.com/lightninglabs/dev-resources/docker-regtest/ && source ./vars.sh
-        - regtest naut daemon
-        - regtest ld
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
